@@ -2,64 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flipkart Clone</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Animated Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .form-box {
+            background: #fff;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            animation: fadeSlide 1s ease;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            color: #777;
+            font-size: 14px;
+            pointer-events: none;
+            transform: translateY(-50%);
+            transition: 0.3s;
+            background: #fff;
+            padding: 0 5px;
+        }
+
+        .input-box input:focus + label,
+        .input-box input:valid + label {
+            top: -8px;
+            font-size: 12px;
+            color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #667eea;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Flipkart</div>
-    <input type="text" placeholder="Search for products, brands and more">
-    <button class="login-btn">Login</button>
-</header>
+    <div class="form-box">
+        <h2>Contact Form</h2>
 
-<nav>
-    <a href="#">Mobiles</a>
-    <a href="#">Fashion</a>
-    <a href="#">Electronics</a>
-    <a href="#">Home</a>
-    <a href="#">Appliances</a>
-    <a href="#">Travel</a>
-</nav>
+        <form>
+            <div class="input-box">
+                <input type="text" required>
+                <label>Name</label>
+            </div>
 
-<section class="banner">
-    <h1>Big Billion Sale</h1>
-    <p>Up to 70% Off</p>
-</section>
+            <div class="input-box">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
 
-<section class="products">
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Smartphone</h3>
-        <p>₹14,999</p>
-        <button>Add to Cart</button>
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
-
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Laptop</h3>
-        <p>₹49,999</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Headphones</h3>
-        <p>₹1,999</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Smart Watch</h3>
-        <p>₹2,999</p>
-        <button>Add to Cart</button>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Flipkart Clone | Designed by Gajendra Jha</p>
-</footer>
 
 </body>
 </html>
